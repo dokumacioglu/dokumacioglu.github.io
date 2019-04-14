@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Title of our webpage -->
+		<title>Registration</title>
+		<link rel="icon" href="content/AOD.png" type="image/png">
+		<!-- Applying the Bootstrap with CDN way. -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	
+	<body>
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-secondary shadow p-3 mb-5 ">
+		  <a class="navbar-brand" href="index.htm"><img src="content/EOD.png" title="Homepage"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" href="index.htm">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="films.htm">Films</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="musics.htm">Musics</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="books.htm">Books</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="usefullinks.htm">Useful Links</a>
+			  </li>
+			  <li class="nav-item ">
+				<a class="nav-link" href="contactme.htm">Contact Me</a>
+			  </li>
+			  <li class="nav-item active">
+				<a class="nav-link" href="registration.htm">Registration <span class="sr-only">(current)</span></a>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+
+		<!-- Coding area -->
+		<div class="container">
+			<div class="row justify-content-center" style="margin-top:20px; margin-bottom:20px;">
+				<div class="col-xl-8 col-lg-8 col-md-8">
+					<center>
+						<h1 class="font-weight-bold">Registration</h1>
+						<p class="font-weight-light font-italic">You can simply register by filling the form given below to be notified about latest updates in my website.
+						I won't charge you anything for this godlike privilege, trust me!<br>
+						</p>
+					</center>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center">
+				<div class="col-xl-9 col-lg-9 col-md-9 col-xs-12 bg-light shadow p-3 mb-5 rounded">
+					<form>
+						<div class="form-row">
+							<div class="col">
+							  <label for="fname"><b>Name</b></label>
+							  <input type="text" class="form-control" id="fname">
+							</div>
+							<div class="col">
+							  <label for="fname"><b>Surname</b></label>
+							  <input type="text" class="form-control" id="sname">
+							</div>
+						</div> <br>
+						<div class="form-group">
+							<label for="usernamee"><b>Username</b></label>
+							<input type="text" class="form-control" maxlength="10" id="usernamee" placeholder="Only 10 characters are allowed.">
+						</div>
+						<div class="form-group">
+							<label for="email"><b>Password</b></label>
+							<input type="password" class="form-control" id="email" placeholder="Your password must contain at least 1 uppercase char and 1 number.">
+						</div>
+						<div class="form-group">
+							<label for="email"><b>Email address</b></label>
+							<input type="email" class="form-control" id="email" placeholder="example@abc.xyz">
+						</div>
+						<div class="form-group">
+							<label for="phonenum"><b>Phone Number</b></label>
+							<input type="text" maxlength="11" class="form-control" id="phonenum" placeholder="11 digits are allowed at max">
+						</div>
+						<div class="form-group">
+							<label for="bdate"><b>Date of Birth</b></label>
+							<input type="date" class="form-control" id="bdate">
+						</div>
+						<div class="form-group">
+							<label for="issue"><b>Field of Study</b></label>
+							<input type="text" class="form-control" maxlength="15" id="issue">
+						</div>
+						<div class="form-group">
+						  <label for="gender"><b>Gender</b></label>
+						  <select id="gender" class="form-control">
+								<option selected>Male</option>
+								<option>Female</option>
+								<option>I don't want to specify</option>
+						  </select>
+						</div>
+						<div class="form-group">
+							<label for="ppupload"><b>Upload a Profile Picture</b></label>
+							<input type="file" class="form-control-file" id="ppupload">
+						 </div>
+						<center>
+							<button type="submit" value="Send" onClick="alert('Please check your email for registration approval.')" class="btn btn-secondary mx-auto">Register</button>
+						</center> <br>
+						<center><small class="font-weight-light font-italic">No information will be sold to or shared with any other third person.</small></center>
+					</form>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Optional JS, in order of JQuery, Popper.js, Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
