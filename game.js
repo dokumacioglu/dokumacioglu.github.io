@@ -87,6 +87,7 @@ var brick5 = {
 
 var bricks = [brick1,brick2,brick3,brick4,brick5];
 
+
 //Function that catches pressings on the left and right buttons.
 function keyDownHandler(event){
 	if (event.key == "Right" || event.key == "ArrowRight"){
@@ -110,7 +111,7 @@ function collisionDetection(){
 	for (var i=0; i<bricks.length; i++){
 		var b = bricks[i];
 		if(b.status == 1){
-			if( x  > b.x && x< b.x+brickWidth && y+dy > b.y-ballRadius && y + dy < b.y+brickHeight+ballRadius) {
+			if( x  > b.x && x < b.x+brickWidth && y+dy > b.y-ballRadius && y + dy < b.y+brickHeight+ballRadius) {
 				dy = -dy;
 				//Increases the velocity in the x-axis by a random number.
 				if(dx < 0) {
@@ -124,6 +125,21 @@ function collisionDetection(){
 				ballColor = b.color;
 				score += b.point;
 			} 
+			else if ((x+dx < b.x+brickWidth+ballRadius && y+dy>b.y && y+dy<b.y+brickHeight) &&
+			  (x+dx > b.x-ballRadius && y+dy>b.y && y+dy<b.y+brickHeight)) {
+				dx = -dx;
+				//Increases the velocity in the y-axis by a random number.
+				if(dy < 0) {
+					dy += -Math.random() * 0.5;
+				} 
+				//Increases the velocity in the x-axis by a random number.
+				else {
+					dy += Math.random() * 0.5;
+				}
+				b.status = 0;
+				ballColor = b.color;
+				score += b.point;
+			}
 			if (score == 250) {
 				alert("Congratulations!");
 				document.location.reload();
@@ -135,8 +151,11 @@ function collisionDetection(){
 
 //This function determines the conditions of collision and what will happen to the items next.
 function collisionObstacle(){
-	if( x > obstacleX && x < obstacleX + obstacleWidth && y + dy > obstacleY-ballRadius && y + dy < obstacleY+obstacleHeight ) {
+	if( x > obstacleX && x < obstacleX + obstacleWidth && y + dy > obstacleY-ballRadius && y + dy < obstacleY+obstacleHeight+ballRadius ){
 		dy = -dy;
+	} else if ((x+dx < obstacleX+obstacleWidth+ballRadius && y+dy>obstacleY && y+dy<obstacleY+obstacleHeight) &&
+			  (x+dx > obstacleX-ballRadius && y+dy>obstacleY && y+dy<obstacleY+obstacleHeight)) {
+		dx = -dx;
 	}
 }
 
@@ -184,6 +203,11 @@ function drawPaddle(){
 	ctx.closePath();
 }
 
+function changeLabel(){
+	let lbl = document.getElementById('scoreLabel');
+	lbl.innerText = score;
+}
+
 function draw(){
 	//In order: x axis of the corner, y axis of the corner, width of the rect., height of the rect.
 	//Corner is the top left corner!!
@@ -194,7 +218,7 @@ function draw(){
 	drawPaddle();
 	drawBricks();
 	drawObstacle();
-	drawScore();
+	changeLabel();
 	collisionDetection();
 	collisionObstacle();
 	
@@ -228,6 +252,7 @@ function draw(){
 	y += dy;
 
 }
+
 
 //Event listeners for key pressing events.
 document.addEventListener("keydown", keyDownHandler, false);
